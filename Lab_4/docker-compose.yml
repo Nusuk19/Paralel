@@ -1,0 +1,19 @@
+version: '3'
+services:
+  applications-service:
+    build: ./applications-service
+    ports:
+      - "4001:4001"
+    depends_on:
+      - drivers-service
+      - vehicles-service
+
+  drivers-service:
+    build: ./drivers-service
+    ports:
+      - "4002:4002"
+
+  vehicles-service:
+    build: ./vehicles-service
+    ports:
+      - "4003:4003"
